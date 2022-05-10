@@ -1,10 +1,10 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
-const methodOverride = require('method-override') 
+const methodOverride = require('method-override')
 
-app.set('views', __dirname +'/views')
-app.set('view engine','jsx')
+app.set('views', __dirname + '/views')
+app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 app.use(express.static('public'))
 
@@ -20,8 +20,8 @@ app.get('*', (req, res) => {
     res.render('error404')
 })
 app.get('/', (req, res) => {
-    res.render('places/index', {places})
-  })
+    res.render('places/index', { places })
+})
 
 
 app.listen(process.env.PORT)
